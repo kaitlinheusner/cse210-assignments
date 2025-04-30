@@ -39,8 +39,8 @@ class Program
         return squared;
     }
 
-    static void DisplayResult(string name, int number)
+    static void DisplayResult(string name, int square)
     {
-        Console.Write($"{name}, the square of your number is {number}");
+        Console.Write($"{name}, the square of your number is {square}");
     }
 }
