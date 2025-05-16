@@ -75,7 +75,7 @@ class Program
 
 public class Journal
 {
-    private List<Entry> _entries = new List<Entry> ();
+    public List<Entry> _entries = new List<Entry> ();
     public string _fileName;
     
     public void AddEntry(Entry entry)
