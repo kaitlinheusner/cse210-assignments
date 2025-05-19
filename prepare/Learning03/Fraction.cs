@@ -45,8 +45,7 @@ public class Fraction
 
     public string GetFractionString()
     {
-        string fractionText = ($"{_topNumber}/{_bottomNumber}");
-        return fractionText;
+        return $"{_topNumber}/{_bottomNumber}";
     }
 
     public double GetDecimalValue()
