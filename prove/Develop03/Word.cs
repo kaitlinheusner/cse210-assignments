@@ -1,3 +1,5 @@
+using System.IO.Compression;
+
 public class Word
 {
     private string _text;
@@ -14,9 +16,9 @@ public class Word
         _isHidden = true;
     }
 
-    public void Show()
+    public bool Show()
     {
-        _isHidden = false;
+        return !_isHidden;
     }
 
     public bool isHidden()

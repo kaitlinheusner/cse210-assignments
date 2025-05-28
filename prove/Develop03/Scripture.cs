@@ -2,15 +2,16 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _words = new List<Word>();
+    private List<Word> _visibleWords = new List<Word>();
 
     public Scripture(Reference reference, string scriptureText)
     {
         _reference = reference;
 
-        string[] words = scriptureText.Split(" ");
-        foreach (string wordText in words)
+        string[] parts = scriptureText.Split(" ");
+        foreach (string word in parts)
         {
-            _words.Add(new Word(wordText));
+            _words.Add(new Word(word));
         }
     }
 
@@ -18,9 +19,9 @@ public class Scripture
     {
         string scriptureBody = "";
 
-        foreach (Word word in _words)
+        foreach (Word scriptureWord in _words)
         {
-            scriptureBody += word.GetRenderedText() + " ";
+            scriptureBody += scriptureWord.GetRenderedText() + " ";
         }
 
         return $"{_reference.GetReference()} {scriptureBody}";
@@ -28,24 +29,29 @@ public class Scripture
 
     public void HideWords()
     {
-        Random random = new Random();
-        int count = random.Next(1, 3);
-        int hidden = 0;
+        _visibleWords.Clear();
 
-        while (hidden < count)
+        foreach (Word word in _words)
         {
-            int index = random.Next(_words.Count());
-
-            if (!_words[index].isHidden())
+            if (word.Show())
             {
-                _words[index].Hide();
-                hidden++;
+                _visibleWords.Add(word);
             }
         }
 
-         if (IsCompletelyHidden())
+        Random random = new Random();
+        int countToHide = random.Next(1, 4);
+
+        if (countToHide > _visibleWords.Count)
         {
-            return;
+            countToHide = _visibleWords.Count;
+        }
+
+        for (int i = 0; i < countToHide; i++)
+        {
+            int index = random.Next(_visibleWords.Count);
+            _visibleWords[index].Hide();
+            _visibleWords.RemoveAt(index);
         }
     }
 
@@ -58,7 +64,6 @@ public class Scripture
                 return false;
             }
         }
-
         return true;
     }
 }
