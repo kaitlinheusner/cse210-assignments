@@ -28,19 +28,24 @@ public class Scripture
 
     public void HideWords()
     {
-        Random randomWord = new Random();
-        bool wordHidden = false;
+        Random random = new Random();
+        int count = random.Next(1, 3);
+        int hidden = 0;
 
-        while (!wordHidden)
+        while (hidden < count)
         {
-            int index = randomWord.Next(_words.Count());
+            int index = random.Next(_words.Count());
 
             if (!_words[index].isHidden())
             {
                 _words[index].Hide();
-                wordHidden = true;
+                hidden++;
             }
-            
+        }
+
+         if (IsCompletelyHidden())
+        {
+            return;
         }
     }
 

@@ -28,6 +28,11 @@ class Program
             Console.Clear();
             Console.WriteLine(scripture.GetRenderedText());
 
+            if (scripture.IsCompletelyHidden())
+            {
+                break;
+            }
+
             Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
             user_input = Console.ReadLine();
 
@@ -37,11 +42,6 @@ class Program
             }
 
             scripture.HideWords();
-
-            if (scripture.IsCompletelyHidden())
-            {
-                break;
-            }
 
         }
 
