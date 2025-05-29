@@ -18,10 +18,15 @@ class Program
             "But behold, all things have been done in the wisdom of him who knoweth all things.\nAdam fell that men might be; and men are, that they might have joy."),
 
             new Scripture(new Reference("Doctrine and Covenants", 3, 1, 3),
-            "The works, and the designs, and the purposes of God cannot be frustrated, neither can they come to naught. \nFor God doth not walk in crooked paths, neither doth he turn to the right hand nor to the left, neither doth he vary from that which he hath said, therefore his paths are straight, and his course is one eternal round. \nRemember, remember that it is not the work of God that is frustrated, but the work of men;")
+            "The works, and the designs, and the purposes of God cannot be frustrated, neither can they come to naught. \nFor God doth not walk in crooked paths, neither doth he turn to the right hand nor to the left, neither doth he vary from that which he hath said, therefore his paths are straight, and his course is one eternal round. \nRemember, remember that it is not the work of God that is frustrated, but the work of men;"),
+
+            new Scripture(new Reference("Matthew", 3, 16, 17),
+            "And Jesus, when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of God descending like a dove, and lighting upon him: \nAnd lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased."),
+
+            new Scripture(new Reference("Moses", 2, 3),
+            "And I, God, said: Let there be light; and there was light."),
         };
 
-    
     public static Scripture GetScripture()
     {
         Random random = new Random();
@@ -32,9 +37,9 @@ class Program
     public static void Main(string[] args)
     {
         Scripture scripture = GetScripture();
-        string user_input = "";
+        string userInput = "";
 
-        while (user_input == "")
+        while (userInput == "")
         {
             Console.Clear();
             Console.WriteLine(scripture.GetRenderedText());
@@ -45,16 +50,14 @@ class Program
             }
 
             Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
-            user_input = Console.ReadLine();
+            userInput = Console.ReadLine();
 
-            if (user_input.ToLower() == "quit")
+            if (userInput.ToLower() == "quit")
             {
                 break;
             }
 
             scripture.HideWords();
-
         }
-
     }
 }
