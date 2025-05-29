@@ -21,7 +21,7 @@ public class Word
         return !_isHidden;
     }
 
-    public bool isHidden()
+    public bool IsHidden()
     {
         return _isHidden;
     }

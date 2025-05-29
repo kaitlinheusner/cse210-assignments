@@ -9,6 +9,7 @@ public class Scripture
         _reference = reference;
 
         string[] parts = scriptureText.Split(" ");
+
         foreach (string word in parts)
         {
             _words.Add(new Word(word));
@@ -59,7 +60,7 @@ public class Scripture
     {
         foreach (Word word in _words)
         {
-            if (!word.isHidden())
+            if (!word.IsHidden())
             {
                 return false;
             }

@@ -6,7 +6,7 @@ class Program
     private static List<Scripture> _scriptures = new List<Scripture>()
         {
             new Scripture(new Reference("John", 3, 16),
-            "For For God so loved the world that he gave his only Son, that whoever believes in him should not perish but have eternal life."),
+            "For God so loved the world that he gave his only Son, that whoever believes in him should not perish but have eternal life."),
 
             new Scripture(new Reference("Alma", 37, 35),
             "O, remember, my son, and learn wisdom in thy youth; yea, learn in thy youth to keep the commandments of God."),
