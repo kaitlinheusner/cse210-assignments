@@ -3,7 +3,7 @@ public class Activity
     protected string _name;
     protected string _description;
     protected int _duration;
-    protected List<string> _animationStrings = new List<string>();
+    private List<string> _animationStrings = new List<string>();
 
     public Activity(string name, string description, int duration)
     {
@@ -36,6 +36,7 @@ public class Activity
         SpinnerPause();
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
+        Console.WriteLine();
     }
 
     public void SpinnerPause()
@@ -58,7 +59,7 @@ public class Activity
         {
             string s = _animationStrings[i];
             Console.Write(s);
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.Write("\b \b");
 
             i++;

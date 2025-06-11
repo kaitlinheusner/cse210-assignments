@@ -1,11 +1,24 @@
 public class BreathingActivity : Activity
 {
     private bool _isBreathingIn;
+    private int _breathingAttempts;
 
-    public BreathingActivity(int duration) : base("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", duration)
+    public BreathingActivity(int duration):
+    base("Breathing Activity",
+    "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.",
+    duration)
     {
-        
-        _isBreathingIn = true;
+        _duration = duration;
+    }
+
+    public int GetBreathingAttempts()
+    {
+        return _breathingAttempts;
+    }
+
+    public void DisplayBreathingAttempts()
+    {
+        Console.WriteLine($"You have completed the Breathing Activity {_breathingAttempts} time(s).");
     }
 
     public void RunBreathingActivity()
@@ -15,6 +28,7 @@ public class BreathingActivity : Activity
         DateTime endActivity = DateTime.Now.AddSeconds(_duration);
 
         int breathCycleCount = 0;
+        _isBreathingIn = true;
 
         while (DateTime.Now < endActivity)
         {
@@ -36,10 +50,11 @@ public class BreathingActivity : Activity
 
             if (breathCycleCount % 2 == 0)
             {
-                Console.WriteLine();  
+                Console.WriteLine();
             }
         }
 
+        _breathingAttempts++;
         DisplayEndMessage();
         SpinnerPause();
 

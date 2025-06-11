@@ -2,11 +2,12 @@ using System.Security.Cryptography.X509Certificates;
 
 public class ReflectingActivity : Activity
 {
+    private int _reflectingAttempts;
     private List<string> _prompts = new List<string>()
     {
         new string("Think of a time when you stood up for someone else."),
         new string("Think of a time when you did something really difficult."),
-        new string("Think of a time when you helped someone in need."), 
+        new string("Think of a time when you helped someone in need."),
         new string("Think of a time when you did something truly selfless.")
     };
 
@@ -24,9 +25,12 @@ public class ReflectingActivity : Activity
     };
 
 
-    public ReflectingActivity(int duration) : base("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", duration)
+    public ReflectingActivity(int duration):
+    base("Reflecting Activity",
+    "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.",
+    duration)
     {
-
+        _duration = duration;
     }
 
     public string GetRandomPrompt()
@@ -53,6 +57,15 @@ public class ReflectingActivity : Activity
         Console.Write($"> {GetRandomQuestion()} ");
     }
 
+    public int GetReflectingAttempts()
+    {
+        return _reflectingAttempts;
+    }
+
+    public void DisplayReflectListAttempts()
+    {
+        Console.WriteLine($"You have done the Reflecting Activity {_reflectingAttempts} time(s).");
+    }
 
     public void RunReflectingActivity()
     {
@@ -87,6 +100,7 @@ public class ReflectingActivity : Activity
 
             Console.WriteLine();
             DisplayEndMessage();
+            _reflectingAttempts++;
         }
     }
 }
