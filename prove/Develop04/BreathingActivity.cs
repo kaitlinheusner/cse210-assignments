@@ -24,6 +24,7 @@ public class BreathingActivity : Activity
     public void RunBreathingActivity()
     {
         DisplayStartMessage();
+        Console.WriteLine();
 
         DateTime endActivity = DateTime.Now.AddSeconds(_duration);
 
@@ -56,8 +57,6 @@ public class BreathingActivity : Activity
 
         _breathingAttempts++;
         DisplayEndMessage();
-        SpinnerPause();
-
     }
 
 }

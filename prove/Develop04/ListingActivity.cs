@@ -49,7 +49,7 @@ public class ListingActivity : Activity
         DisplayListingPrompt();
         Console.Write("You may begin in: ");
         CountdownPause(5);
-
+        Console.WriteLine();
 
         DateTime endActivity = DateTime.Now.AddSeconds(_duration);
 
@@ -57,7 +57,7 @@ public class ListingActivity : Activity
 
         while (DateTime.Now < endActivity)
         {
-            Console.WriteLine("> ");
+            Console.Write("> ");
             string userInput = Console.ReadLine();
 
             if (!string.IsNullOrEmpty(userInput))
@@ -71,6 +71,5 @@ public class ListingActivity : Activity
 
         _listingAttempts++;
         DisplayEndMessage();
-
     }
 }

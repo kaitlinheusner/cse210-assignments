@@ -24,18 +24,21 @@ public class Activity
         _duration = int.Parse(Console.ReadLine());
 
         Console.WriteLine();
+        Console.Clear();
+
         Console.WriteLine("Get ready...");
-
         SpinnerPause();
-
     }
 
     public void DisplayEndMessage()
     {
         Console.WriteLine("Well Done!");
         SpinnerPause();
+
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
+
+        SpinnerPause();
         Console.WriteLine();
     }
 

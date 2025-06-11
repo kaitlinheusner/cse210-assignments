@@ -13,14 +13,16 @@ class Program
         while (userChoice != 5)
         {
             Console.WriteLine("Menu Options: ");
-            Console.WriteLine("1. Start Breathing Activity");
-            Console.WriteLine("2. Start Reflecting Activity");
-            Console.WriteLine("3. Start Listing Activity");
-            Console.WriteLine("4. Check Actvity Attempts");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("  1. Start Breathing Activity");
+            Console.WriteLine("  2. Start Reflecting Activity");
+            Console.WriteLine("  3. Start Listing Activity");
+            Console.WriteLine("  4. Check Actvity Attempts");
+            Console.WriteLine("  5. Quit");
             Console.Write("Select a choice from the menu: ");
 
             userChoice = int.Parse(Console.ReadLine());
+
+            Console.Clear();
 
             switch (userChoice)
             {
@@ -42,7 +44,6 @@ class Program
                     Console.WriteLine("1. Breathing Activity");
                     Console.WriteLine("2. Reflecting Activity");
                     Console.WriteLine("3. Listing Activity");
-        
                     Console.Write("Select your choice: ");
 
                     int userAttemptChoice = int.Parse(Console.ReadLine());

@@ -99,8 +99,8 @@ public class ReflectingActivity : Activity
             }
 
             Console.WriteLine();
-            DisplayEndMessage();
             _reflectingAttempts++;
+            DisplayEndMessage();
         }
     }
 }
