@@ -47,6 +47,7 @@ public class ListingActivity : Activity
 
         Console.WriteLine("List as many responses you can to the following prompt: ");
         DisplayListingPrompt();
+
         Console.Write("You may begin in: ");
         CountdownPause(5);
         Console.WriteLine();
@@ -66,7 +67,7 @@ public class ListingActivity : Activity
             }
         }
 
-        Console.WriteLine($"You listed {listCount} times");
+        Console.WriteLine($"You listed {listCount} items");
         Console.WriteLine();
 
         _listingAttempts++;

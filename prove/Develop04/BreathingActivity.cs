@@ -31,7 +31,7 @@ public class BreathingActivity : Activity
         int breathCycleCount = 0;
         _isBreathingIn = true;
 
-        while (DateTime.Now < endActivity)
+        while (DateTime.Now <= endActivity)
         {
             if (_isBreathingIn)
             {
@@ -41,7 +41,7 @@ public class BreathingActivity : Activity
 
             else if (_isBreathingIn == false)
             {
-                Console.Write("Now breathe out...");
+                Console.Write("Breathe out...");
                 CountdownPause(3);
             }
 
@@ -55,6 +55,7 @@ public class BreathingActivity : Activity
             }
         }
 
+        Console.WriteLine();
         _breathingAttempts++;
         DisplayEndMessage();
     }
