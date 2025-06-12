@@ -40,6 +40,8 @@ public class Activity
 
         SpinnerPause();
         Console.WriteLine();
+
+        Console.Clear();
     }
 
     public void SpinnerPause()
@@ -54,7 +56,7 @@ public class Activity
         _animationStrings.Add("\\");
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(6);
+        DateTime endTime = startTime.AddSeconds(5);
 
         int i = 0;
 

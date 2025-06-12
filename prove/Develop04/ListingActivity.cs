@@ -67,7 +67,7 @@ public class ListingActivity : Activity
             }
         }
 
-        Console.WriteLine($"You listed {listCount} items");
+        Console.WriteLine($"You listed {listCount} item(s)");
         Console.WriteLine();
 
         _listingAttempts++;
