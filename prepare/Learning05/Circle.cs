@@ -1,14 +1,15 @@
 public class Circle : Shape
 {
-    private double _radius;
+    // private double _radius;
 
+    public double Radius{ get; set;}
     public Circle(string color, double radius) : base(color)
     {
-        _radius = radius;
+        Radius = radius;
     }
 
     public override double GetArea()
     {
-        return Math.PI * _radius * _radius;
+        return Math.PI * Radius * Radius;
     }
 }

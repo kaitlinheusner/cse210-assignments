@@ -18,8 +18,7 @@ class Program
 
         foreach (Shape s in shapes)
         {
-            string color = s.GetColor();
-
+            string color = s.Color;
             double area = s.GetArea();
 
             Console.WriteLine($"The {color} {s} has an area of {area}");

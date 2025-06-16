@@ -1,16 +1,19 @@
+using System.Runtime.CompilerServices;
+
 public class Square : Shape
 {
-    private double _side;
+    // private double _side;
+
+    public double Side { get; set;}
 
     public Square(string color, double side) : base(color)
     {
-        _side = side;
+        Side = side;
     }
 
     public override double GetArea()
     {
-        return _side * _side;
+        return Side * Side;
     }
-
 
 }
