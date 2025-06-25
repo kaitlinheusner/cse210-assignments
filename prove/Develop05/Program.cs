@@ -9,7 +9,7 @@ class Program
 
         int userChoice = 0;
 
-        while (userChoice != 6)
+        while (userChoice != 7)
         {
             Console.WriteLine();
             Console.WriteLine($"You have {manager.GetTotalPoints()} points.");
@@ -21,7 +21,8 @@ class Program
             Console.WriteLine("  3. Save Goals");
             Console.WriteLine("  4. Load Goals");
             Console.WriteLine("  5. Record Event");
-            Console.WriteLine("  6. Quit");
+            Console.WriteLine("  6. Suggest Goal");
+            Console.WriteLine("  7. Quit");
             Console.Write("Select a choice from the menu: ");
 
             userChoice = int.Parse(Console.ReadLine());
@@ -90,6 +91,10 @@ class Program
                     break;
 
                 case 6:
+                    manager.SuggestGoal();
+                    break;
+
+                case 7:
                     break;
             }
         }

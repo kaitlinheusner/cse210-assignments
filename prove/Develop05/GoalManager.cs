@@ -77,6 +77,16 @@ public class GoalManager
         }
     }
 
+    public void SuggestGoal()
+    {
+        Console.WriteLine("A goal that you could work on is: ");
+
+        Random random = new Random();
+        int index = random.Next(_goals.Count);
+        Goal suggestedGoal = _goals[index];
+        Console.WriteLine($"{suggestedGoal.GetName()} {suggestedGoal.GetDescription()}");
+    }
+
     public void RecordGoalEvent()
     {
         Console.WriteLine("The goals are: ");
@@ -112,14 +122,5 @@ public class GoalManager
             Console.WriteLine("Please enter a valid number.");
         }
 
-    }
-
-    public void DebugPrintFile()
-    {
-        Console.WriteLine("=== FILE CONTENTS ===");
-        foreach (string line in File.ReadAllLines(_filename))
-        {
-            Console.WriteLine($"'{line}'");
-        }
     }
 }
