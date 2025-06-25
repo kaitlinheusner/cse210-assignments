@@ -37,7 +37,7 @@ public class ChecklistGoal : Goal
 
     public override string GetSaveString()
     {
-        return $"ChecklistGoal, {GetName()},{GetDescription()},{GetPoints()},{_bonusPoints},{_targetCount},{_currentCount}";
+        return $"ChecklistGoal:{GetName()},{GetDescription()},{GetPoints()},{_bonusPoints},{_targetCount},{_currentCount}";
     }
 
     public override string GetDetailsString()
@@ -56,4 +56,17 @@ public class ChecklistGoal : Goal
         return $"{status} {GetName()} ({GetDetailsString()}) -- Currently Completed: {_currentCount}/{_targetCount} ";
     }
 
+    
+    public static Goal CreateFromData(string data)
+    {
+        string[] parts = data.Split(",");
+        string name = parts[0];
+        string desc = parts[1];
+        int points = int.Parse(parts[2]);
+        int bonus = int.Parse(parts[3]);
+        int target = int.Parse(parts[4]);
+        int current = int.Parse(parts[5]);
+
+        return new ChecklistGoal(name, desc, points, bonus, target, current);
+    }
 }

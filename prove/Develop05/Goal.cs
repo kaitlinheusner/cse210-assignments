@@ -12,7 +12,7 @@ public abstract class Goal
         _description = description;
         _points = points;
     }
-    
+
     public int GetPoints()
     {
         return _points;
@@ -32,5 +32,18 @@ public abstract class Goal
     public abstract string GetDetailsString();
     public abstract int RecordEvent();
     public abstract bool IsComplete();
+    public static Goal CreateGoalFromFile(string line)
+    {
+        string[] parts = line.Split(":", 2);
+        string type = parts[0];
+        string data = parts[1];
 
+        return type switch
+        {
+            "SimpleGoal" => SimpleGoal.CreateGoalFromFile(data),
+            "ChecklistGoal" => ChecklistGoal.CreateGoalFromFile(data),
+            "EternalGoal" => EternalGoal.CreateGoalFromFile(data),
+             _ => throw new Exception($"Unknown goal type: '{type}'")
+        };
+    }
 }

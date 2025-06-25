@@ -16,12 +16,10 @@ public class GoalManager
 
     public string GetFilename()
     {
-        return _filename;
-    }
-
-    public void SetFilename(string filename)
-    {
+        Console.Write("What is the filename for the goal file? ");
+        string filename = Console.ReadLine();
         _filename = filename;
+        return _filename;
     }
 
     public int GetTotalPoints()
@@ -45,6 +43,7 @@ public class GoalManager
 
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
+            outputFile.WriteLine(_totalScore);
             foreach (Goal goal in _goals)
             {
                 outputFile.WriteLine(goal.GetSaveString());
@@ -55,34 +54,15 @@ public class GoalManager
     public void LoadGoals()
     {
         _goals.Clear();
+        string[] lines = File.ReadAllLines(_filename);
+        _totalScore = int.Parse(lines[0]);
 
-        string fileName = _filename;
-        string[] lines = System.IO.File.ReadAllLines(fileName);
-
-        foreach (string line in lines)
+        for (int i = 1; i < lines.Length; i++)
         {
-            string[] parts = line.Split();
+            Console.WriteLine($"[DEBUG] Line {i}: '{lines[i]}'");  // <--- Add this
 
-            string goalType = parts[0];
-            string goalName = parts[1];
-            string goalDescription = parts[2];
-            int goalPoints = int.Parse(parts[3]);
-
-            if (goalType == "SimpleGoal")
-            {
-                SimpleGoal goal = new SimpleGoal(goalName, goalDescription, goalPoints);
-                _goals.Add(goal);
-            }
-
-            else if (goalType == "CheckListGoal")
-            {
-                int bonusPoints = int.Parse(parts[4]);
-                int targetCount = int.Parse(parts[5]);
-                int currentCount = int.Parse(parts[6]);
-
-                ChecklistGoal goal = new ChecklistGoal(goalName, goalDescription, goalPoints, bonusPoints, targetCount, currentCount);
-                _goals.Add(goal);
-            }
+            Goal goal = Goal.CreateGoalFromFile(lines[i]);
+            _goals.Add(goal);
         }
     }
 
@@ -93,7 +73,7 @@ public class GoalManager
         foreach (Goal goal in _goals)
         {
             Console.WriteLine($"{i}. {goal.GetDetailsString()}");
-            i++; 
+            i++;
         }
     }
 
@@ -101,7 +81,7 @@ public class GoalManager
     {
         Console.WriteLine("The goals are: ");
 
-        for (int i = 0; i <= _goals.Count; i++)
+        for (int i = 0; i < _goals.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {_goals[i].GetName()}");
         }
@@ -134,4 +114,12 @@ public class GoalManager
 
     }
 
+    public void DebugPrintFile()
+    {
+        Console.WriteLine("=== FILE CONTENTS ===");
+        foreach (string line in File.ReadAllLines(_filename))
+        {
+            Console.WriteLine($"'{line}'");
+        }
+    }
 }

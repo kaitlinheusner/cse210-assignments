@@ -1,4 +1,5 @@
 using System;
+using System.IO.Enumeration;
 
 class Program
 {
@@ -7,10 +8,13 @@ class Program
         GoalManager manager = new GoalManager();
 
         int userChoice = 0;
-        Console.WriteLine($"You have {manager.GetTotalPoints()}");
 
         while (userChoice != 6)
         {
+            Console.WriteLine();
+            Console.WriteLine($"You have {manager.GetTotalPoints()} points.");
+            Console.WriteLine();
+
             Console.WriteLine("Menu Options: ");
             Console.WriteLine("  1. Create New Goal");
             Console.WriteLine("  2. List Goals");
@@ -18,18 +22,17 @@ class Program
             Console.WriteLine("  4. Load Goals");
             Console.WriteLine("  5. Record Event");
             Console.WriteLine("  6. Quit");
-            Console.WriteLine("Select a choice from the menu: ");
+            Console.Write("Select a choice from the menu: ");
 
             userChoice = int.Parse(Console.ReadLine());
 
             switch (userChoice)
             {
                 case 1:
-                    Console.Write("Select a choice from the menu: ");
                     Console.WriteLine("The types of Goals are: ");
-                    Console.WriteLine("1. Simple Goal");
-                    Console.WriteLine("2. Eternal Goal");
-                    Console.WriteLine("3. Checklist Goal");
+                    Console.WriteLine(" 1. Simple Goal");
+                    Console.WriteLine(" 2. Eternal Goal");
+                    Console.WriteLine(" 3. Checklist Goal");
                     Console.Write("What type of goal would you like to create? ");
                     int goalChoice = int.Parse(Console.ReadLine());
 
@@ -73,10 +76,12 @@ class Program
                     break;
 
                 case 3:
+                    manager.GetFilename();
                     manager.SaveGoals();
                     break;
 
                 case 4:
+                    manager.GetFilename();
                     manager.LoadGoals();
                     break;
 
@@ -88,8 +93,5 @@ class Program
                     break;
             }
         }
-        
-
-        
     }
 }
