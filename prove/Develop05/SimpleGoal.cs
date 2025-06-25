@@ -38,16 +38,16 @@ public class SimpleGoal : Goal
             status = "[ ]";
         }
 
-        return $"{status} {GetName()} ({GetDetailsString()})";
+        return $"{status} {GetName()} ({GetDescription()})";
     }
 
-   public static Goal CreateFromData(string data)
+   public new static Goal CreateGoalFromFile(string data)
     {
         string[] parts = data.Split(",");
-        string name = parts[0];
-        string desc = parts[1];
-        int points = int.Parse(parts[2]);
-        bool isComplete = bool.Parse(parts[3]); 
+        string name = parts[0].Trim();
+        string desc = parts[1].Trim();
+        int points = int.Parse(parts[2].Trim());
+        bool isComplete = bool.Parse(parts[3].Trim()); 
 
         return new SimpleGoal(name, desc, points, isComplete);
     }

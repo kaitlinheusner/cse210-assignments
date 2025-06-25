@@ -53,11 +53,11 @@ public class ChecklistGoal : Goal
             status = "[ ]";
         }
 
-        return $"{status} {GetName()} ({GetDetailsString()}) -- Currently Completed: {_currentCount}/{_targetCount} ";
+        return $"{status} {GetName()} ({GetDescription()}) -- Currently Completed: {_currentCount}/{_targetCount} ";
     }
 
     
-    public static Goal CreateFromData(string data)
+    public new static Goal CreateGoalFromFile(string data)
     {
         string[] parts = data.Split(",");
         string name = parts[0];

@@ -21,10 +21,10 @@ public class EternalGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"[ ] {GetName()} ({GetDetailsString()})";
+        return $"[ ] {GetName()} ({GetDescription()})";
     }
     
-    public static Goal CreateFromData(string data)
+    public new static Goal CreateGoalFromFile(string data)
     {
         string[] parts = data.Split(",");
         string name = parts[0];

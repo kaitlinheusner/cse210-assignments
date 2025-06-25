@@ -59,8 +59,6 @@ public class GoalManager
 
         for (int i = 1; i < lines.Length; i++)
         {
-            Console.WriteLine($"[DEBUG] Line {i}: '{lines[i]}'");  // <--- Add this
-
             Goal goal = Goal.CreateGoalFromFile(lines[i]);
             _goals.Add(goal);
         }
@@ -70,9 +68,11 @@ public class GoalManager
     {
         int i = 0;
 
+        Console.WriteLine("The goals are: ");        
+
         foreach (Goal goal in _goals)
         {
-            Console.WriteLine($"{i}. {goal.GetDetailsString()}");
+            Console.WriteLine($"{i + 1}. {goal.GetDetailsString()}");
             i++;
         }
     }
@@ -97,8 +97,8 @@ public class GoalManager
                 int pointsEarned = _goals[index].RecordEvent();
                 _totalScore += pointsEarned;
 
-                Console.WriteLine($"Congratulations! You earned {pointsEarned} points");
-                Console.WriteLine($"You have {_totalScore} points.");
+                Console.WriteLine($"Congratulations! You have earned {pointsEarned} points");
+                Console.WriteLine($"You now have {_totalScore} points.");
             }
 
             else

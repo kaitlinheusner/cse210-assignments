@@ -35,8 +35,8 @@ public abstract class Goal
     public static Goal CreateGoalFromFile(string line)
     {
         string[] parts = line.Split(":", 2);
-        string type = parts[0];
-        string data = parts[1];
+        string type = parts[0].Trim();
+        string data = parts[1].Trim();
 
         return type switch
         {
