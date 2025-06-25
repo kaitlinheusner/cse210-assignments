@@ -1,2 +1,0 @@
-0
-SimpleGoal:hair,cut hair,100,False
