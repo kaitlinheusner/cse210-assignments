@@ -12,6 +12,7 @@ public class SimpleGoal : Goal
     public override int RecordEvent()
     {
         _isComplete = true;
+        
         return GetPoints();
     }
 
@@ -28,6 +29,7 @@ public class SimpleGoal : Goal
     public override string GetDetailsString()
     {
         string status;
+
         if (_isComplete)
         {
             status = "[X]";
@@ -44,6 +46,7 @@ public class SimpleGoal : Goal
    public new static Goal CreateGoalFromFile(string data)
     {
         string[] parts = data.Split(",");
+
         string name = parts[0].Trim();
         string desc = parts[1].Trim();
         int points = int.Parse(parts[2].Trim());

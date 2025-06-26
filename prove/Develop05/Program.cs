@@ -35,6 +35,7 @@ class Program
                     Console.WriteLine(" 2. Eternal Goal");
                     Console.WriteLine(" 3. Checklist Goal");
                     Console.Write("What type of goal would you like to create? ");
+
                     int goalChoice = int.Parse(Console.ReadLine());
 
                     Console.Write("What is the name of your goal? ");
@@ -49,13 +50,13 @@ class Program
                     switch (goalChoice)
                     {
                         case 1:
-                            SimpleGoal simplegoal = new SimpleGoal(goalName, goalDescription, goalPoints);
-                            manager.AddGoal(simplegoal);
+                            SimpleGoal simpleGoal = new SimpleGoal(goalName, goalDescription, goalPoints);
+                            manager.AddGoal(simpleGoal);
                             break;
 
                         case 2:
-                            EternalGoal eternalgoal = new EternalGoal(goalName, goalDescription, goalPoints);
-                            manager.AddGoal(eternalgoal);
+                            EternalGoal eternalGoal = new EternalGoal(goalName, goalDescription, goalPoints);
+                            manager.AddGoal(eternalGoal);
                             break;
 
                         case 3:
@@ -65,8 +66,8 @@ class Program
                             Console.Write("What is the bonus for accomplishing it that many times? ");
                             int bonusPoints = int.Parse(Console.ReadLine());
 
-                            ChecklistGoal checklistgoal = new ChecklistGoal(goalName, goalDescription, goalPoints, bonusPoints, targetCount, 0);
-                            manager.AddGoal(checklistgoal);
+                            ChecklistGoal checklistGoal = new ChecklistGoal(goalName, goalDescription, goalPoints, bonusPoints, targetCount, 0);
+                            manager.AddGoal(checklistGoal);
                             break;
                     }
 

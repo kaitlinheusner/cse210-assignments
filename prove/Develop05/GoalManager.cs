@@ -7,19 +7,23 @@ public class GoalManager
 {
     private List<Goal> _goals;
     private int _totalScore;
-    private string _filename;
+    private string _fileName;
+    private List<Goal> _incompleteGoals;
 
     public GoalManager()
     {
         _goals = new List<Goal>();
+        _incompleteGoals = new List<Goal>();
     }
 
     public string GetFilename()
     {
         Console.Write("What is the filename for the goal file? ");
-        string filename = Console.ReadLine();
-        _filename = filename;
-        return _filename;
+        string fileName = Console.ReadLine();
+
+        _fileName = fileName;
+        
+        return _fileName;
     }
 
     public int GetTotalPoints()
@@ -39,11 +43,12 @@ public class GoalManager
 
     public void SaveGoals()
     {
-        string filename = _filename;
+        string fileName = _fileName;
 
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             outputFile.WriteLine(_totalScore);
+
             foreach (Goal goal in _goals)
             {
                 outputFile.WriteLine(goal.GetSaveString());
@@ -54,7 +59,8 @@ public class GoalManager
     public void LoadGoals()
     {
         _goals.Clear();
-        string[] lines = File.ReadAllLines(_filename);
+
+        string[] lines = File.ReadAllLines(_fileName);
         _totalScore = int.Parse(lines[0]);
 
         for (int i = 1; i < lines.Length; i++)
@@ -79,11 +85,28 @@ public class GoalManager
 
     public void SuggestGoal()
     {
+        _incompleteGoals.Clear();
+
+        foreach (Goal goal in _goals)
+        {
+            if (!goal.IsComplete())
+            {
+                _incompleteGoals.Add(goal);
+            }
+        }
+
+        if (_incompleteGoals.Count == 0)
+        {
+            Console.WriteLine("There are no goals for you to work on. ");
+            return;
+        }
+
         Console.WriteLine("A goal that you could work on is: ");
 
         Random random = new Random();
-        int index = random.Next(_goals.Count);
-        Goal suggestedGoal = _goals[index];
+        int index = random.Next(_incompleteGoals.Count);
+        Goal suggestedGoal = _incompleteGoals[index];
+
         Console.WriteLine($"{suggestedGoal.GetName()} {suggestedGoal.GetDescription()}");
     }
 
