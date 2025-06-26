@@ -32,6 +32,7 @@ public abstract class Goal
     public abstract string GetDetailsString();
     public abstract int RecordEvent();
     public abstract bool IsComplete();
+    
     public static Goal CreateGoalFromFile(string line)
     {
         string[] parts = line.Split(":", 2);
@@ -43,7 +44,7 @@ public abstract class Goal
             "SimpleGoal" => SimpleGoal.CreateGoalFromFile(data),
             "ChecklistGoal" => ChecklistGoal.CreateGoalFromFile(data),
             "EternalGoal" => EternalGoal.CreateGoalFromFile(data),
-             _ => throw new Exception($"Unknown goal type: '{type}'")
+            _ => throw new Exception($"Unknown goal type: '{type}'")
         };
     }
 }

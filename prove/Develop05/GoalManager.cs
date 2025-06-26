@@ -22,7 +22,7 @@ public class GoalManager
         string fileName = Console.ReadLine();
 
         _fileName = fileName;
-        
+
         return _fileName;
     }
 
@@ -55,7 +55,7 @@ public class GoalManager
             }
         }
     }
-
+    
     public void LoadGoals()
     {
         _goals.Clear();

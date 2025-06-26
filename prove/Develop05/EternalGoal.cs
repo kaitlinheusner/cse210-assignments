@@ -27,7 +27,7 @@ public class EternalGoal : Goal
     public new static Goal CreateGoalFromFile(string data)
     {
         string[] parts = data.Split(",");
-        
+
         string name = parts[0];
         string desc = parts[1];
         int points = int.Parse(parts[2]);

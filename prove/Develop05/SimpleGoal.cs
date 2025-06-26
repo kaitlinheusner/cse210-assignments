@@ -12,7 +12,7 @@ public class SimpleGoal : Goal
     public override int RecordEvent()
     {
         _isComplete = true;
-        
+
         return GetPoints();
     }
 
@@ -54,5 +54,4 @@ public class SimpleGoal : Goal
 
         return new SimpleGoal(name, desc, points, isComplete);
     }
-
 }

@@ -56,12 +56,11 @@ public class ChecklistGoal : Goal
 
         return $"{status} {GetName()} ({GetDescription()}) -- Currently Completed: {_currentCount}/{_targetCount} ";
     }
-
     
     public new static Goal CreateGoalFromFile(string data)
     {
         string[] parts = data.Split(",");
-        
+
         string name = parts[0];
         string desc = parts[1];
         int points = int.Parse(parts[2]);
