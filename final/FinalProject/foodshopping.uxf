@@ -52,7 +52,8 @@ ArabianFood
 +Food(name: string, description: string, quantity: int)
 +GetFoodDetails(): string
 +ShowFoodDetails(): void
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>208</x><y>440</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
+
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>208</x><y>440</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
 fg=black
 IndianFood
 --
@@ -64,7 +65,7 @@ IndianFood
 +Food(name: string, description: string, quantity: int)
 +GetFoodDetails(): string
 +ShowFoodDetails(): void
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>448</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>448</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
 fg=black
 ArabianStore
 --
@@ -79,9 +80,9 @@ style=wordwrap</panel_attributes><additional_attributes></additional_attributes>
 </panel_attributes><additional_attributes>60;10;60;40;10;40;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>376</y><w>200</w><h>88</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;230;20;230;90</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>120</y><w>280</w><h>248</h></coordinates><panel_attributes>lt=&lt;-
 fg=yellow</panel_attributes><additional_attributes>230;290;330;290;330;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>408</x><y>368</y><w>104</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
 fg=yellow</panel_attributes><additional_attributes>30;180;10;180;10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>488</x><y>352</y><w>160</w><h>176</h></coordinates><panel_attributes>lt=&lt;-
-fg=yellow</panel_attributes><additional_attributes>180;200;150;200;150;70;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>544</y><w>352</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
-fg=yellow</panel_attributes><additional_attributes>10;10;10;30;420;30;420;10</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>544</y><w>384</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
-fg=yellow</panel_attributes><additional_attributes>10;10;10;80;460;80;460;10</additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>80</y><w>144</w><h>144</h></coordinates><panel_attributes>lt=&lt;-
+fg=yellow</panel_attributes><additional_attributes>180;200;150;200;150;70;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>112</x><y>544</y><w>360</w><h>56</h></coordinates><panel_attributes>lt=&lt;-
+fg=yellow</panel_attributes><additional_attributes>10;30;10;50;430;50;430;10</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>544</y><w>384</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+fg=yellow</panel_attributes><additional_attributes>10;30;10;80;460;80;460;10</additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>80</y><w>144</w><h>144</h></coordinates><panel_attributes>lt=&lt;-
 fg=cyan</panel_attributes><additional_attributes>80;10;160;10;160;160;130;160;130;70;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>632</x><y>448</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
 fg=black
 IndianStore
