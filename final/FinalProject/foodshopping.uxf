@@ -1,0 +1,120 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>296</x><y>48</y><w>168</w><h>160</h></coordinates><panel_attributes>bg=white
+fg=black
+Order Manager
+--
+
+-_currentOrder: List&lt;Food&gt;
+
+--
+
++ViewShopMenu(): void
++AddToCart(): void
++RemoveFromCart(): void
++DeleteCart(): void
++ConfirmOrder(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>112</x><y>224</y><w>160</w><h>152</h></coordinates><panel_attributes>bg=white
+fg=black
+&lt;abstract&gt;
+Food
+--
+
+#_name: string
+#_description: string
+#_quantity: int
+
+--
+
+/+GetFoodDetails(): string/
+/+ShowFoodDetails(): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>472</x><y>224</y><w>168</w><h>144</h></coordinates><panel_attributes>bg=white
+fg=black
+&lt;abstract&gt;
+Store
+--
+
+#_name: string
+#_description: string
+#_menuItems: List&lt;Food&gt;
+
+--
+
+/+GetStoreName(): string/
+/+DisplayMenu(): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>24</x><y>440</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
+fg=black
+ArabianFood
+--
+
+-_arabFood: List&lt;Food&gt;
+
+--
+
++Food(name: string, description: string, quantity: int)
++GetFoodDetails(): string
++ShowFoodDetails(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>208</x><y>440</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
+fg=black
+IndianFood
+--
+
+-_indianFood: List&lt;Food&gt;
+
+--
+
++Food(name: string, description: string, quantity: int)
++GetFoodDetails(): string
++ShowFoodDetails(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>448</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
+fg=black
+ArabianStore
+--
+
+--
+
++Store(name: string, description: string, menuItems: List&lt;Food&gt;
++GetStoreName(): string
++DisplayMenu(): void
+
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>72</x><y>368</y><w>136</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;150;30;10;30;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>184</x><y>376</y><w>136</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;150;20;150;80</additional_attributes></element><element><id>Relation</id><coordinates><x>512</x><y>360</y><w>64</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;-
+</panel_attributes><additional_attributes>60;10;60;40;10;40;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>376</y><w>200</w><h>88</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;230;20;230;90</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>120</y><w>280</w><h>248</h></coordinates><panel_attributes>lt=&lt;-
+fg=yellow</panel_attributes><additional_attributes>230;290;330;290;330;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>408</x><y>368</y><w>104</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
+fg=yellow</panel_attributes><additional_attributes>30;180;10;180;10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>488</x><y>352</y><w>160</w><h>176</h></coordinates><panel_attributes>lt=&lt;-
+fg=yellow</panel_attributes><additional_attributes>180;200;150;200;150;70;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>544</y><w>352</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+fg=yellow</panel_attributes><additional_attributes>10;10;10;30;420;30;420;10</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>544</y><w>384</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+fg=yellow</panel_attributes><additional_attributes>10;10;10;80;460;80;460;10</additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>80</y><w>144</w><h>144</h></coordinates><panel_attributes>lt=&lt;-
+fg=cyan</panel_attributes><additional_attributes>80;10;160;10;160;160;130;160;130;70;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>632</x><y>448</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
+fg=black
+IndianStore
+--
+
+--
+
++Store(name: string, description: string, menuItems: List&lt;Food&gt;
++GetStoreName(): string
++DisplayMenu(): void
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>24</x><y>40</y><w>168</w><h>152</h></coordinates><panel_attributes>bg=white
+fg=black
+Program
+--
+
+--
+
++Menu(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>120</y><w>40</w><h>72</h></coordinates><panel_attributes>fg=pink
+</panel_attributes><additional_attributes>20;10;10;10;10;70;30;70</additional_attributes></element><element><id>Relation</id><coordinates><x>96</x><y>88</y><w>152</w><h>80</h></coordinates><panel_attributes>fg=pink
+</panel_attributes><additional_attributes>10;10;100;10;100;80;170;80</additional_attributes></element><element><id>Relation</id><coordinates><x>232</x><y>112</y><w>80</w><h>32</h></coordinates><panel_attributes>lt=&lt;-
+fg=pink
+</panel_attributes><additional_attributes>80;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>128</y><w>88</w><h>24</h></coordinates><panel_attributes>lt=&lt;-
+fg=pink</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>144</y><w>88</w><h>24</h></coordinates><panel_attributes>lt=&lt;-
+fg=pink</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>152</y><w>88</w><h>24</h></coordinates><panel_attributes>lt=&lt;-
+fg=pink</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>168</y><w>72</w><h>24</h></coordinates><panel_attributes>lt=&lt;-
+fg=pink</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>416</x><y>128</y><w>88</w><h>40</h></coordinates><panel_attributes>fg=cyan</panel_attributes><additional_attributes>10;30;90;30;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>144</y><w>120</w><h>32</h></coordinates><panel_attributes>fg=cyan</panel_attributes><additional_attributes>10;20;130;20;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>152</y><w>104</w><h>40</h></coordinates><panel_attributes>fg=cyan</panel_attributes><additional_attributes>10;30;110;30;110;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>672</x><y>16</y><w>152</w><h>320</h></coordinates><panel_attributes>bg=white
+fg=black
+halign=left
+My program class calls the Menu() method which will call one of the methods in the OrderManager class based on how the user wants to interact with the program. When the user chooses to view the menu, they will select which store they would like to see. This will create instances of the appropriate Store and Food subclasses based on the cuisine they selected. These objects are then used to display the menu items from the chosen store.  
+
+
+The DisplayMenu() and DisplayFoodDetails() methods are abstract so the subclasses of Food and Store will override it to display it in the correct format for that specific cuisine. 
+
+Furthermore, OrderManager manages the user's cart by allowing users to add, remove, or confirm their order through interaction with the menu. 
+
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element></diagram>
