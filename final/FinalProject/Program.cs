@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design;
 
 class Program
 {
@@ -6,4 +7,10 @@ class Program
     {
         Console.WriteLine("Hello FinalProject World!");
     }
-}
+
+    public void Menu()
+    {
+        Console.WriteLine("Welcome to the Online Food Shopping Program! ");
+    }
+
+    }
