@@ -1,7 +1,5 @@
 public class IndianFood : Food
 {
-    private List<Food> _indianFood;
-
     public IndianFood(string name, string description, int quantity) : base(name, description, quantity)
     {
     }
@@ -25,6 +23,4 @@ public class IndianFood : Food
     {
         Console.WriteLine(GetFoodDetailsForMenu());
     }
-
-    
 }

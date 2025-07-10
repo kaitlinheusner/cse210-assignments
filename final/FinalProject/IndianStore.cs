@@ -2,8 +2,9 @@ public class IndianStore : Store
 {
     public IndianStore() : base("Masala Palace", "Food from India",new List<Food>
                             {
-                                new ArabianFood("Butter Chicken", "Chicken wrapped in pita", 0),
-                                new ArabianFood("Tikka Masala", "Rich, spicy curry", 0)
+                                new IndianFood("Butter Chicken", "Chicken wrapped in pita", 0),
+                                new IndianFood("Tikka Masala", "Rich, spicy curry", 0), 
+                                new IndianFood("Palak Paneer", "Curry made from spinach", 0)
                             })
     {
     }

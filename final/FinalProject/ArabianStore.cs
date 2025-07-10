@@ -4,7 +4,8 @@ public class ArabianStore : Store
     public ArabianStore() : base("Tandoori Delights", "Rich, savory food from the Middle East", new List<Food>
                             {
                                 new ArabianFood("Shawarma", "Chicken wrapped in pita", 0),
-                                new ArabianFood("Hummus", "Chickpea dip", 0)
+                                new ArabianFood("Hummus", "Chickpea dip", 0),
+                                new ArabianFood("Warak Enab", "Spice covered rice wrapped in grape leaves", 0),
                             })
     {
     }

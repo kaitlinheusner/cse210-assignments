@@ -10,7 +10,11 @@ public abstract class Store
         _storeDescription = storeDescription;
         _menuItems = menuItems;
     }
-
+    public List<Food> GetMenuItems()
+    {
+        return _menuItems;
+    }
+    
     public abstract string GetStoreName();
     public abstract void DisplayMenu();
 }
