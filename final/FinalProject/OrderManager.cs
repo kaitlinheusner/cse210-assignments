@@ -107,12 +107,22 @@ public class OrderManager
 
     public void DeleteCart()
     {
+        if (_currentOrder.Count == 0)
+        {
+            Console.WriteLine("There is nothing in your cart to clear. ");
+        }
+
         _currentOrder.Clear();
         Console.WriteLine("Your order has been cleared. ");
     }
 
     public void ConfirmOrder()
     {
+        if (_currentOrder.Count == 0)
+        {
+            Console.WriteLine("There is nothing in your cart");
+        }
+
         Console.WriteLine("Your order is: ");
         Console.WriteLine();
 
@@ -120,6 +130,8 @@ public class OrderManager
         {
             food.ShowFoodDetailsForOrder();
         }
+
+        Console.WriteLine("It has been confirmed with the restaurant and will be arriving shortly.");
 
         _currentOrder.Clear();
     }
