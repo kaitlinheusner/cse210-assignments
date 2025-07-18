@@ -1,6 +1,6 @@
 public class IndianStore : Store
 {
-    public IndianStore() : base("Masala Palace", "vibrant and exciting dishes from India",new List<Food>
+    public IndianStore() : base("Masala Palace", "vibrant and exciting dishes from India", new List<Food>
                             {
                                 new IndianFood("Butter Chicken", "Creamy, tomato based curry with chicken", 0),
                                 new IndianFood("Tikka Masala", "Rich, spicy curry", 0),
