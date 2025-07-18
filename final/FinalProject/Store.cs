@@ -1,7 +1,7 @@
 public abstract class Store
 {
-    protected string _storeName;
-    protected string _storeDescription;
+    private string _storeName;
+    private string _storeDescription;
     protected List<Food> _menuItems;
 
     public Store(string storeName, string storeDescription, List<Food> menuItems)
@@ -10,11 +10,21 @@ public abstract class Store
         _storeDescription = storeDescription;
         _menuItems = menuItems;
     }
+
     public List<Food> GetMenuItems()
     {
         return _menuItems;
     }
-    
-    public abstract string GetStoreName();
+
+    public virtual string GetStoreName()
+    {
+        return _storeName;
+    }
+
+    public virtual string GetStoreDescription()
+    {
+        return _storeDescription;
+    }
+
     public abstract void DisplayMenu();
 }

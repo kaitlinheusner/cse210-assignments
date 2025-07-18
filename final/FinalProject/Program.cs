@@ -4,8 +4,7 @@ using System.ComponentModel.Design;
 class Program
 {
     static void Main(string[] args)
-    {
-        
+    {   
         Console.WriteLine("Welcome to the Online Food Shopping Program! ");
         Console.WriteLine();
 

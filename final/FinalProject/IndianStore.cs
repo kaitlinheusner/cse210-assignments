@@ -8,22 +8,26 @@ public class IndianStore : Store
                             })
     {
     }
-   
-    public override string GetStoreName()
-    {
-        return _storeName;
-    }
 
     public override void DisplayMenu()
     {
-        Console.WriteLine($"Welcome to {GetStoreName()}!");
         Console.WriteLine();
 
-        Console.WriteLine("Menu: ");
+        Console.WriteLine($"Welcome to {GetStoreName()}!");
+        Console.WriteLine($"We offer, {GetStoreDescription()} ");
+        
+        Console.WriteLine("Enjoy our Indian dishes: ");
+        Console.WriteLine();
+
+        Console.WriteLine("******************************");
+        Console.WriteLine();
 
         foreach (var food in _menuItems)
         {
             food.ShowFoodDetailsForMenu();
         }
+
+        Console.WriteLine();
+        Console.WriteLine("******************************");
     }
 }
