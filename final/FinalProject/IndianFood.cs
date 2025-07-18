@@ -4,9 +4,8 @@ public class IndianFood : Food
     {
     }
 
-   public override string GetFoodDetailsForOrder()
+    public override string GetFoodDetailsForOrder()
     {
-        return $" {GetName()}  —  {GetDescription()} — Qty: {GetQuantity()}";
+        return $"{GetName()}  —  {GetDescription()} — Qty: {GetQuantity()}";
     }
-
 }

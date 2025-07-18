@@ -1,0 +1,1 @@
+To use my program correctly, follow the instructions given by the input prompts. They will tell you what to input based on what you desire to do. 

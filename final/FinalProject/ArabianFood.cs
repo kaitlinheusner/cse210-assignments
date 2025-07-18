@@ -8,5 +8,4 @@ public class ArabianFood : Food
     {
         return $"{GetName()} | {GetDescription()} | Qty: {GetQuantity()}";
     }
-
 }

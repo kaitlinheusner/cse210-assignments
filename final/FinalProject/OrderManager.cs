@@ -114,6 +114,7 @@ public class OrderManager
         if (_currentOrder.Count == 0)
         {
             Console.WriteLine("There is nothing in your cart.");
+            return;
         }
 
         else
@@ -133,64 +134,69 @@ public class OrderManager
             return;
         }
 
-        Console.WriteLine();
-        Console.WriteLine("Your current cart: ");
-
-        for (int i = 0; i < _currentOrder.Count; i++)
+        else
         {
-            Console.WriteLine($"{i + 1}. {_currentOrder[i].GetFoodDetailsForOrder()}");
-        }
+            Console.WriteLine();
+            Console.WriteLine("Your current cart: ");
 
-        Console.WriteLine();
+            for (int i = 0; i < _currentOrder.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {_currentOrder[i].GetFoodDetailsForOrder()}");
+            }
 
-        Console.WriteLine("Would you like to: ");
-        Console.WriteLine("1. Remove item from Cart ");
-        Console.WriteLine("2. Adjust quantity");
-        Console.WriteLine();
+            Console.WriteLine();
 
-        Console.Write("Enter the number of the action you would like to do: ");
-        int removeChoice = int.Parse(Console.ReadLine());
+            Console.WriteLine("Would you like to: ");
+            Console.WriteLine("1. Remove item from Cart ");
+            Console.WriteLine("2. Adjust quantity");
 
-        switch (removeChoice)
-        {
-            case 1:
-                Console.Write("Which item would you like to remove? Please enter the numer: ");
-                int itemIndex = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
-                if (itemIndex > 0 && itemIndex <= _currentOrder.Count)
-                {
-                    _currentOrder.RemoveAt(itemIndex - 1);
-                    Console.WriteLine("Item has been removed from cart");
-                }
+            Console.Write("Enter the number of the action you would like to do: ");
+            int removeChoice = int.Parse(Console.ReadLine());
 
-                break;
+            switch (removeChoice)
+            {
+                case 1:
+                    Console.Write("Which item would you like to remove? Please enter the number: ");
+                    int itemIndex = int.Parse(Console.ReadLine());
 
-            case 2:
-                Console.Write("Which item would you like to adjust? Please enter the number: ");
-                int adjustIndex = int.Parse(Console.ReadLine());
-
-                if (adjustIndex > 0 && adjustIndex <= _currentOrder.Count)
-                {
-                    Console.Write("Enter the new quantity: ");
-                    int newQuantity = int.Parse(Console.ReadLine());
-
-                    if (newQuantity > 0)
+                    if (itemIndex > 0 && itemIndex <= _currentOrder.Count)
                     {
-                        _currentOrder[adjustIndex - 1].SetQuantity(newQuantity);
-                        Console.WriteLine("Quantity has been updated. ");
+                        _currentOrder.RemoveAt(itemIndex - 1);
+                        Console.WriteLine("Item has been removed from cart");
+                    }
+
+                    break;
+
+                case 2:
+                    Console.Write("Which item would you like to adjust? Please enter the number: ");
+                    int adjustIndex = int.Parse(Console.ReadLine());
+
+                    if (adjustIndex > 0 && adjustIndex <= _currentOrder.Count)
+                    {
+                        Console.Write("Enter the new quantity: ");
+                        int newQuantity = int.Parse(Console.ReadLine());
+
+                        if (newQuantity > 0)
+                        {
+                            _currentOrder[adjustIndex - 1].SetQuantity(newQuantity);
+                            Console.WriteLine("The quantity has been updated. ");
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Quantity must be greater than 0. ");
+                        }
                     }
 
                     else
                     {
-                        Console.WriteLine("Quantity must be greater than 0. ");
+                        Console.WriteLine("Invalid item number. ");
                     }
-                }
 
-                else
-                {
-                    Console.WriteLine("Invalid item number. ");
-                }
-                break; 
+                    break; 
+            }
         }
     }
 
@@ -199,10 +205,14 @@ public class OrderManager
         if (_currentOrder.Count == 0)
         {
             Console.WriteLine("There is nothing in your cart to clear. ");
+            return;
         }
 
-        _currentOrder.Clear();
-        Console.WriteLine("Your order has been cleared. ");
+        else
+        {
+            _currentOrder.Clear();
+            Console.WriteLine("Your order has been cleared. ");
+        }
     }
 
     public void ConfirmOrder()
@@ -210,18 +220,21 @@ public class OrderManager
         if (_currentOrder.Count == 0)
         {
             Console.WriteLine("There is nothing in your cart");
+            return;
         }
 
-        Console.WriteLine("Your order is: ");
-        Console.WriteLine();
-
-        foreach (var food in _currentOrder)
+        else
         {
-            food.ShowFoodDetailsForOrder();
+            Console.WriteLine("Your order is: ");
+            Console.WriteLine();
+
+            foreach (var food in _currentOrder)
+            {
+                food.ShowFoodDetailsForOrder();
+            }
+
+            Console.WriteLine("It has been confirmed with the restaurant and will be arriving shortly.");
+            _currentOrder.Clear();     
         }
-
-        Console.WriteLine("It has been confirmed with the restaurant and will be arriving shortly.");
-
-        _currentOrder.Clear();
     }
 }
