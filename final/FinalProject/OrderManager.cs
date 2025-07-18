@@ -119,9 +119,9 @@ public class OrderManager
 
         else
         {
-            foreach (var food in _currentOrder)
+            for (int i = 0; i < _currentOrder.Count; i++)
             {
-                food.ShowFoodDetailsForOrder();
+                Console.WriteLine($"{i + 1}. {_currentOrder[i].GetFoodDetailsForOrder()}");
             }
         }
     }
